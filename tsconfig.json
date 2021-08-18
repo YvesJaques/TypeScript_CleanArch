@@ -1,5 +1,6 @@
 {
-  "compilerOptions": {    
+  "compilerOptions": {  
+    "esModuleInterop": true,  
     "baseUrl": "src",    
     "rootDir": "src",
     "paths": {
