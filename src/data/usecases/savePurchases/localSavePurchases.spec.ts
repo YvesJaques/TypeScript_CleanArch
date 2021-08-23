@@ -1,7 +1,6 @@
 import { CacheStoreSpy, mockPurchases,  } from "@/data/tests"
 import { LocalSavePurchases } from "@/data/usecases"
 
-
 type SutTypes = {
     sut: LocalSavePurchases
     cacheStore: CacheStoreSpy
