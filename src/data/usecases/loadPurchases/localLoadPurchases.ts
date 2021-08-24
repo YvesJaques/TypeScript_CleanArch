@@ -17,7 +17,7 @@ export class LocalLoadPurchases implements SavePurchases, LoadPurchases {
             value: purchases
         })
     }
-
+    
     async loadAll (): Promise<Array<LoadPurchases.Result>> {
         try{
             const cache = this.cacheStore.fetch(this.key)            
@@ -29,6 +29,14 @@ export class LocalLoadPurchases implements SavePurchases, LoadPurchases {
             }
         } catch (error) {            
             return []
+        }
+    }
+    
+    validate (): void {
+        try{
+            this.cacheStore.fetch(this.key)
+        } catch (error) {            
+            this.cacheStore.delete(this.key)
         }
     }
 }
