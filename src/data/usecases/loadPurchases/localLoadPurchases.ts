@@ -2,7 +2,6 @@ import { CachePolicy, CacheStore } from "@/data/protocols/cache";
 import { PurchaseModel } from "@/domain/models";
 import { LoadPurchases, SavePurchases } from "@/domain/useCases";
 
-
 export class LocalLoadPurchases implements SavePurchases, LoadPurchases {
     private readonly key = 'purchases'
     constructor (
@@ -24,7 +23,6 @@ export class LocalLoadPurchases implements SavePurchases, LoadPurchases {
             if (CachePolicy.validate(cache.timestamp, this.currentDate)) {
                 return cache.value
             } else {
-                this.cacheStore.delete(this.key)
                 return []
             }
         } catch (error) {            
