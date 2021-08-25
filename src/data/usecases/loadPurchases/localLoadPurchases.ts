@@ -9,7 +9,7 @@ export class LocalLoadPurchases implements SavePurchases, LoadPurchases {
         private readonly cacheStore: CacheStore,
         private readonly currentDate: Date
     ) {}
-    laodAll: () => Promise<PurchaseModel[]>;
+
 
     async save (purchases: Array<SavePurchases.Params>): Promise<void> {        
         this.cacheStore.replace(this.key, {
